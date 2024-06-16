@@ -22,7 +22,7 @@ QuizMaster is a dynamic quiz-taking web application built with Vite and React. I
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/quiz-master.git
+    git clone https://github.com/MoDev40/quiz-master.git
     cd quiz-master
     ```
 
