@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Contact from './components/Contact';
 import GlobalLayout from './components/GlobalLayout';
-import Home from './components/Home';
-import Playground from './components/Playground';
+import ContactPage from './pages/ContactPage';
+import HomePage from './pages/HomePage';
+import PlaygroundPage from './pages/PlaygroundPage';
 
 function App() {
   return (
       <Routes>
         <Route path="/" element={<GlobalLayout />}>
-          <Route index element={<Home />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="playground" element={<Playground />} />
+          <Route index element={<HomePage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="playground" element={<PlaygroundPage />} />
         </Route>
       </Routes>
   );
