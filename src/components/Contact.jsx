@@ -10,8 +10,8 @@ function Contact() {
           We would love to hear from you! Reach out to us for any queries, feedback, or support.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
-          <Link className="btn" to="/">
-            Home
+          <Link className="underline" to="/">
+          Back to Home
           </Link>
         </div>
       </div>
