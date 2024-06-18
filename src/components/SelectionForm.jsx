@@ -15,7 +15,7 @@ function SelectionForm({ setQuestions }) {
         const res = await fetch('https://opentdb.com/api_category.php');
         const { trivia_categories } = await res.json();
         setCategories(trivia_categories);
-        toast.success("Success fetching categories");
+        // toast.success("Success fetching categories");
       } catch (error) {
         setIsError(true);
         toast.error("Unexpected Error");
@@ -73,7 +73,7 @@ function SelectionForm({ setQuestions }) {
             ))}
           </select>
           <input required className='border border-indigo-500 focus:outline-none focus:border-indigo-600 rounded p-2' type="number" name='amount' id='amount' placeholder='Number of questions'/>
-          <button className='bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700' type="submit">
+          <button className='btn' type="submit">
             {isLoading ? <Loader /> : "Submit"}
           </button>
         </form>

@@ -37,7 +37,7 @@ function Playground() {
         <div className='grid w-full md:grid-cols-2 gap-4'>
           {shuffle(questions[i]?.incorrect_answers.concat(questions[i]?.correct_answer)).map((choose, index) => (
             <button
-              className='w-full p-4 bg-indigo-500 text-white rounded hover:bg-indigo-600'
+              className='w-full btn'
               key={index}
               onClick={() => handleCheckAndNext(choose)}
             >
