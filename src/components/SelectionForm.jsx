@@ -15,9 +15,9 @@ function SelectionForm({ setQuestions }) {
         const res = await fetch('https://opentdb.com/api_category.php');
         const { trivia_categories } = await res.json();
         setCategories(trivia_categories);
-        // toast.success("Success fetching categories");
       } catch (error) {
         setIsError(true);
+        setCategories([])
         toast.error("Unexpected Error");
       }
     };
@@ -25,7 +25,7 @@ function SelectionForm({ setQuestions }) {
     toast.promise(fetchCategories(), {
       loading: "Fetching categories",
     });
-  }, []);
+  }, [isError]);
 
   const handleSelectedData = async (e) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ function SelectionForm({ setQuestions }) {
   };
 
   return (
-    <div className="flex flex-col h-screen justify-center items-center p-5 w-full">
+    <div className="flex flex-col justify-center items-center p-5 w-full">
       {isError ? (
         <div>
           <button 

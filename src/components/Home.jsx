@@ -24,7 +24,7 @@ function Home() {
         <div className="mt-10 flex items-center justify-center gap-x-6"></div>
       </div>
       <Link className="flex flex-col w-full" to="/playground">
-        <button className="btn">Playground</button>
+        <button className="btn">Start now</button>
       </Link>
     </div>
   );
