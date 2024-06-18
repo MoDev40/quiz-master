@@ -10,7 +10,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
     <App />
-    <Toaster/>
+    <Toaster
+      position="top-right"
+      reverseOrder={false}
+    />
     </BrowserRouter>
   </React.StrictMode>,
 )

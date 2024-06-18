@@ -17,12 +17,22 @@ const sanitizeHtml = (text) => {
 function Playground() {
   const [questions, setQuestions] = useState([]);
   const [i, setI] = useState(0);
+  const [corrected, setCorrected] = useState(0);
   
   const handleCheckAndNext = (answer) => {
-    notify(answer === questions[i]?.correct_answer);
+    if(answer === questions[i]?.correct_answer){
+      notify(true);
+      setCorrected(prevCorrected => prevCorrected + 1);
+    }else{
+      notify(false);
+    }
+
     if (i + 1 !== questions.length) {
       setI(prevI => prevI + 1);
     } else {
+      toast(`corrected ${corrected}/${questions.length}`, {
+        icon: '👏',
+      });
       setI(0);
       setQuestions([]);
     }
