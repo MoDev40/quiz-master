@@ -1,7 +1,8 @@
+import { shuffle } from 'lodash';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import SelectionForm from './SelectionForm';
-import { shuffle } from 'lodash';
+import { Link } from 'react-router-dom';
 
 const notify = (correct) => {
   correct ? toast.success('Correct!') : toast.error('Incorrect!');
@@ -28,8 +29,12 @@ function Playground() {
   };
 
   return (
-    questions.length > 0 ? (
+  <div className="mx-auto max-w-2xl flex flex-col justify-center h-screen">
+      <h1 className="text-4xl font-bold text-center tracking-tight text-gray-900 sm:text-6xl">Playground</h1>
+      {
+      questions.length > 0 ? (
       <div className='flex flex-col items-center container mx-auto py-10'>
+        
         <div className='mb-6 text-center'>
           <h1 className='text-xl font-bold'>{sanitizeHtml(questions[i]?.question)}</h1>
           <p className='text-gray-600'>({i + 1}/{questions.length})</p>
@@ -46,9 +51,19 @@ function Playground() {
           ))}
         </div>
       </div>
-    ) : (
-      <SelectionForm setQuestions={setQuestions} />
-    )
+      ) : (
+        <SelectionForm setQuestions={setQuestions} />
+      )
+      }
+      <div className="mt-10 flex items-center justify-center gap-x-6">
+        <Link onClick={()=>{
+          setI(0)
+          setQuestions([])
+        }} className="underline" to="/">
+          Back to Home
+        </Link>
+      </div>
+    </div>   
   );
 }
 

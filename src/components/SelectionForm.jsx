@@ -61,7 +61,7 @@ function SelectionForm({ setQuestions }) {
           </button>
         </div>
       ) : (
-        <form className='flex flex-col space-y-4 bg-white p-6 rounded-lg shadow-lg' onSubmit={handleSelectedData}>
+        <form className='flex flex-col space-y-4 w-full p-6 rounded-lg shadow-lg' onSubmit={handleSelectedData}>
           <select required className='border border-indigo-500 focus:outline-none focus:border-indigo-600 rounded p-2' name="category" id="category">
             {categories.map(category => (
               <option key={category.id} value={category.id}>{category.name}</option>
