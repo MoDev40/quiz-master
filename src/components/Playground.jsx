@@ -46,7 +46,7 @@ function Playground() {
   };
 
   return (
-  <div className="mx-auto max-w-2xl flex flex-col space-y-4 justify-center h-screen">
+  <div className="mx-auto max-w-2xl flex flex-col items-center space-y-4 justify-center h-screen">
       <h1 className="text-4xl font-bold text-center tracking-tight text-gray-900 sm:text-6xl">Playground</h1>
       {
       size(questions) > 0 ? (
